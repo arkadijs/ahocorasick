@@ -6,5 +6,7 @@ Based on original BSD licensed [implementation][orig] by Danny Yoo from UC Berke
 Build and unit test with `mvn install`.
 Read text strings from `/usr/share/doc/*/README` and do performance test with `mvn exec:java`.
 
+BSD license.
+
 [ac]: http://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_string_matching_algorithm
 [orig]: https://hkn.eecs.berkeley.edu/~dyoo/java/index.html
