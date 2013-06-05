@@ -1,4 +1,4 @@
-# Aho-Corasick string matching algorithm
+## Aho-Corasick string matching algorithm
 
 This is an implementation of [Aho-Corasick string matching algorithm][ac] in Java.
 Based on original BSD licensed [implementation][orig] by Danny Yoo from UC Berkeley.
