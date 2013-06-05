@@ -1,0 +1,57 @@
+package ahocorasick;
+
+/**
+ * Linked list implementation of the EdgeList should be less memory-intensive.
+ */
+class SparseEdgeList implements EdgeList {
+
+    private Cons head = null;
+
+    @Override
+    public State get(byte b) {
+        Cons c = head;
+        while (c != null) {
+            if (c.b == b) {
+                return c.s;
+            }
+            c = c.next;
+        }
+        return null;
+    }
+
+    @Override
+    public void put(byte b, State s) {
+        this.head = new Cons(b, s, head);
+    }
+
+    @Override
+    public byte[] keys() {
+        int length = 0;
+        Cons c = head;
+        while (c != null) {
+            length++;
+            c = c.next;
+        }
+        byte[] result = new byte[length];
+        c = head;
+        int j = 0;
+        while (c != null) {
+            result[j] = c.b;
+            j++;
+            c = c.next;
+        }
+        return result;
+    }
+
+    private class Cons {
+        byte b;
+        State s;
+        Cons next;
+
+        public Cons(byte b, State s, Cons next) {
+            this.b = b;
+            this.s = s;
+            this.next = next;
+        }
+    }
+}
